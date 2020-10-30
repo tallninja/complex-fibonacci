@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker built-t ernestwambua/react-test -f Dockerfile.dev ./client
+  - docker built -t ernestwambua/react-test -f Dockerfile.dev ./client
 
 script:
   - docker run -e CE=true ernestwambua/react-test npm run test
