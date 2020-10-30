@@ -15,7 +15,7 @@ after_success:
   - docker build -t ernestwambua/multi-client ./client
   - docker build -t ernestwambua/multi-nginx ./nginx
   - docker build -t ernestwambua/multi-server ./server
-  - docker build -t ernestwambua/multi-worker ./worker\
+  - docker build -t ernestwambua/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ernestwambua/multi-client
   - docker push ernestwambua/multi-nginx
