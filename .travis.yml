@@ -1,5 +1,6 @@
-sudo: required
 language: generic
+os: linux
+dist: xenial
 
 services:
   - docker
@@ -15,7 +16,7 @@ after_success:
   - docker build -t ernestwambua/multi-nginx ./nginx
   - docker build -t ernestwambua/multi-server ./server
   - docker build -t ernestwambua/multi-worker ./worker\
-  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_ID --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ernestwambua/multi-client
   - docker push ernestwambua/multi-nginx
   - docker push ernestwambua/multi-server
